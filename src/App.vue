@@ -10,11 +10,8 @@
         id="myRange"
         style="float: left;"
       />
-      <p>{{ sliderValue }}</p>
       <span></span>
-      <button type="button" class="button is-primary" @click="rollDice">
-        {{ initialValue }}
-      </button>
+      <button type="button" class="button is-primary" @click="rollDice">{{ buttonmsg }}</button>
       <br />
       <br />
       <button
@@ -22,9 +19,7 @@
         type="button"
         class="button is-small is-danger is-outlined"
         @click="reset"
-      >
-        reset
-      </button>
+      >reset</button>
     </div>
     <show-dice :dice="dice" v-show="dice.length" />
     <calculated-results-table :dice="dice"></calculated-results-table>
@@ -44,26 +39,32 @@ export default {
   data() {
     return {
       dice: [],
-      dices: 8,
       resetIsDisabled: true,
       sliderValue: 8
     };
   },
   methods: {
-    //sliderValue() {},
+    // sliderValue() {
+
+    // },
     rollDice() {
       this.dice = [];
       this.resetIsDisabled = false;
-      this.initialValue = "Again!";
-      for (let index = 0; index < this.dices; index++) {
+      for (let index = 0; index < this.sliderValue; index++) {
         const facevalue = Math.ceil(Math.random() * 6);
         this.dice.push(facevalue);
       }
     },
     reset() {
       this.resetIsDisabled = true;
-      this.initialValue = "Roll 8 Dices";
       this.dice = [];
+    }
+  },
+  computed: {
+    buttonmsg() {
+      return this.resetIsDisabled
+        ? "Roll " + this.sliderValue + " Dices"
+        : "Again!!!";
     }
   }
 };

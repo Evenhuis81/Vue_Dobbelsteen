@@ -7,9 +7,7 @@
         <td v-for="(value, index) in 6" :key="index">{{ index + 1 }}</td>
       </tr>
       <th>Times thrown</th>
-      <td v-for="(value, index) in 6" :key="index">
-        {{ diceCounter[index] }}
-      </td>
+      <td v-for="(value, index) in 6" :key="index">{{ diceCounter[index] }}</td>
     </thead>
   </table>
 </template>
@@ -29,11 +27,11 @@ export default {
     // },
   },
   methods: {
-    timesThrown(value) {
-      var count = 0;
-      this.dice.forEach(die => die === value && count++);
-      return count;
-    }
+    // timesThrown(value) {
+    //   var count = 0;
+    //   this.dice.forEach(die => die === value && count++);
+    //   return count;
+    // }
   },
   computed: {
     diceCounter() {
