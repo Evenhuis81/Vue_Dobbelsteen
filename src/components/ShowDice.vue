@@ -19,6 +19,7 @@ export default {
     }
   },
   methods: {
+    // gebruik als functienaam een naam die duidelijk omschrijft wat de functie doet. Bijvoorbeeld: getUniHexCharacterCode()
     get(die) {
       return `&#x268${die - 1};`;
     }

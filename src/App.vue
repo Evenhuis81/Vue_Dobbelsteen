@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <div class="box has-text-centered">
+      <!-- slider disabelen indien men aan het spelen is -->
       <input
         v-model="sliderValue"
         type="range"
@@ -9,7 +10,9 @@
         class="slider"
         id="myRange"
         style="float: left;"
+        :disabled="!resetIsDisabled"    
       />
+      <!-- ongebruikte elementen verwijderen (span) -->
       <span></span>
       <button type="button" class="button is-primary" @click="rollDice">{{ buttonmsg }}</button>
       <br />
@@ -57,6 +60,8 @@ export default {
     },
     reset() {
       this.resetIsDisabled = true;
+      // dice count ook resetten
+      this.sliderValue = 8;
       this.dice = [];
     }
   },
