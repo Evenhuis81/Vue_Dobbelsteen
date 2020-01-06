@@ -10,10 +10,9 @@
         class="slider"
         id="myRange"
         style="float: left;"
-        :disabled="!resetIsDisabled"    
+        :disabled="!resetIsDisabled"
       />
       <!-- ongebruikte elementen verwijderen (span) -->
-      <span></span>
       <button type="button" class="button is-primary" @click="rollDice">{{ buttonmsg }}</button>
       <br />
       <br />

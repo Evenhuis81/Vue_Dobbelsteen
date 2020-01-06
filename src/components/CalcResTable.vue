@@ -27,8 +27,8 @@
       <tbody>
         <tr v-for="(value, index) in this.diceCounter" :key="index">
           <td>{{ index + 1 }}</td>
-          <td >{{ value }}x</td>
-      </tr>
+          <td>{{ value }}x</td>
+        </tr>
       </tbody>
     </table>
   </div>

@@ -1,12 +1,7 @@
 <template>
   <div class="box has-text-centered">
     <!-- eslint-disable-next-line -->
-    <span
-      id="dice"
-      v-for="(die, index) in dice"
-      :key="index"
-      v-html="get(die)"
-    />
+    <span id="dice" v-for="(die, index) in dice" :key="index" v-html="getHexCodeDice(die)" />
   </div>
 </template>
 
@@ -20,7 +15,7 @@ export default {
   },
   methods: {
     // gebruik als functienaam een naam die duidelijk omschrijft wat de functie doet. Bijvoorbeeld: getUniHexCharacterCode()
-    get(die) {
+    getHexCodeDice(die) {
       return `&#x268${die - 1};`;
     }
   }
